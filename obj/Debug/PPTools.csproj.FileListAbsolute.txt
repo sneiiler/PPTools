@@ -1,0 +1,13 @@
+C:\Users\pc\source\repos\PPTools\bin\Debug\PPTools.dll
+C:\Users\pc\source\repos\PPTools\bin\Debug\PPTools.pdb
+C:\Users\pc\source\repos\PPTools\bin\Debug\PPTools.dll.manifest
+C:\Users\pc\source\repos\PPTools\bin\Debug\PPTools.vsto
+C:\Users\pc\source\repos\PPTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.Properties.Resources.resources
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.Ribbon1.resources
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.csproj.CopyComplete
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.dll
+C:\Users\pc\source\repos\PPTools\obj\Debug\PPTools.pdb
