@@ -85,8 +85,10 @@
             // 
             // editBox1
             // 
+            this.editBox1.Image = ((System.Drawing.Image)(resources.GetObject("editBox1.Image")));
             this.editBox1.Label = "自定义行距";
             this.editBox1.Name = "editBox1";
+            this.editBox1.ShowImage = true;
             this.editBox1.Text = "1.2";
             this.editBox1.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.editBox1_TextChanged);
             // 
@@ -137,8 +139,10 @@
             // 
             // delete_selected_page_animation
             // 
-            this.delete_selected_page_animation.Label = "删除选中页面所有动画";
+            this.delete_selected_page_animation.Image = ((System.Drawing.Image)(resources.GetObject("delete_selected_page_animation.Image")));
+            this.delete_selected_page_animation.Label = "删除选中页面动画";
             this.delete_selected_page_animation.Name = "delete_selected_page_animation";
+            this.delete_selected_page_animation.ShowImage = true;
             this.delete_selected_page_animation.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.delete_selected_page_animation_Click);
             // 
             // group3
