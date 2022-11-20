@@ -114,5 +114,33 @@ namespace PPTools
             sel.TextRange.Font.NameOther = "Times New Roman";
             sel.TextRange.Font.Name = "Times New Roman";
         }
+
+        private void resize_shape_fullbackground_Click(object sender, RibbonControlEventArgs e)
+        {
+            var slide_height = app.ActivePresentation.PageSetup.SlideHeight;// 以磅为单位返回当前幻灯片尺寸，一磅约为0.3527778毫米
+            var slide_width = app.ActivePresentation.PageSetup.SlideWidth;// 以磅为单位返回当前幻灯片尺寸，一磅约为0.3527778毫米
+            PowerPoint.Selection sel = app.ActiveWindow.Selection;
+
+            if (sel.Type == PowerPoint.PpSelectionType.ppSelectionShapes) 
+            { 
+                PowerPoint.ShapeRange range = sel.ShapeRange;
+                foreach (PowerPoint.Shape shape in range) 
+                {
+                    if (isLockAspectRatio.Checked == false)
+                    {
+                        shape.LockAspectRatio = Office.MsoTriState.msoFalse;
+                    }
+                    else
+                    {
+                        shape.LockAspectRatio = Office.MsoTriState.msoTrue;
+                    }
+                    shape.Width = slide_width; 
+                    shape.Height = slide_height;
+                    shape.Left = 0;
+                    shape.Top = 0;
+                    
+                }
+            }
+        }
     }
 }

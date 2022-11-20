@@ -46,16 +46,21 @@
             this.font_timesNR = this.Factory.CreateRibbonButton();
             this.delete_current_page_animation = this.Factory.CreateRibbonButton();
             this.delete_selected_page_animation = this.Factory.CreateRibbonButton();
+            this.group3 = this.Factory.CreateRibbonGroup();
+            this.resize_shape_fullbackground = this.Factory.CreateRibbonButton();
+            this.isLockAspectRatio = this.Factory.CreateRibbonCheckBox();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
+            this.group3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.Groups.Add(this.group1);
             this.tab1.Groups.Add(this.group2);
+            this.tab1.Groups.Add(this.group3);
             this.tab1.Label = "PPTools";
             this.tab1.Name = "tab1";
             this.tab1.Position = this.Factory.RibbonPosition.AfterOfficeId("TabHome");
@@ -63,8 +68,8 @@
             // group1
             // 
             this.group1.Items.Add(this.line_spacing_12);
-            this.group1.Items.Add(this.line_spacing_specific);
             this.group1.Items.Add(this.editBox1);
+            this.group1.Items.Add(this.line_spacing_specific);
             this.group1.Items.Add(this.buttonGroup1);
             this.group1.Label = "文本调整";
             this.group1.Name = "group1";
@@ -137,6 +142,26 @@
             this.delete_selected_page_animation.Name = "delete_selected_page_animation";
             this.delete_selected_page_animation.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.delete_selected_page_animation_Click);
             // 
+            // group3
+            // 
+            this.group3.Items.Add(this.isLockAspectRatio);
+            this.group3.Items.Add(this.resize_shape_fullbackground);
+            this.group3.Label = "形状";
+            this.group3.Name = "group3";
+            // 
+            // resize_shape_fullbackground
+            // 
+            this.resize_shape_fullbackground.Image = ((System.Drawing.Image)(resources.GetObject("resize_shape_fullbackground.Image")));
+            this.resize_shape_fullbackground.Label = "尺寸最大并居中";
+            this.resize_shape_fullbackground.Name = "resize_shape_fullbackground";
+            this.resize_shape_fullbackground.ShowImage = true;
+            this.resize_shape_fullbackground.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.resize_shape_fullbackground_Click);
+            // 
+            // isLockAspectRatio
+            // 
+            this.isLockAspectRatio.Label = "保持原比例";
+            this.isLockAspectRatio.Name = "isLockAspectRatio";
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -151,6 +176,8 @@
             this.group2.PerformLayout();
             this.buttonGroup1.ResumeLayout(false);
             this.buttonGroup1.PerformLayout();
+            this.group3.ResumeLayout(false);
+            this.group3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +195,9 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButtonGroup buttonGroup1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton font_weiruanyahei;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton font_timesNR;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton resize_shape_fullbackground;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox isLockAspectRatio;
     }
 
     partial class ThisRibbonCollection
