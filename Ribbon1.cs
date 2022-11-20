@@ -19,7 +19,7 @@ namespace PPTools
             app= Globals.ThisAddIn.Application;
         }
 
-        private void button1_Click(object sender, RibbonControlEventArgs e)
+        private void line_spacing_12_Click(object sender, RibbonControlEventArgs e)
         {
             PowerPoint.Selection sel = app.ActiveWindow.Selection;
             sel.TextRange.ParagraphFormat.SpaceWithin = 1.2f;
@@ -47,7 +47,7 @@ namespace PPTools
             }
         }
 
-        private void button2_Click(object sender, RibbonControlEventArgs e)
+        private void line_spacing_specific_Click(object sender, RibbonControlEventArgs e)
         {
             PowerPoint.Selection sel = app.ActiveWindow.Selection;
             float linespacing_num = float.Parse(editBox1.Text);
@@ -62,7 +62,7 @@ namespace PPTools
            
         }
 
-        private void button3_Click(object sender, RibbonControlEventArgs e)
+        private void delete_current_page_animation_Click(object sender, RibbonControlEventArgs e)
         {
             PowerPoint.Slide current_slide = app.ActiveWindow.View.Slide;
 
@@ -82,25 +82,37 @@ namespace PPTools
             MessageBox.Show("已删除" + effect_num + "个动画效果!", "动画删除结果");
         }
 
-        private void button4_Click(object sender, RibbonControlEventArgs e)
+        // 删除选中页面所有动画
+        private void delete_selected_page_animation_Click(object sender, RibbonControlEventArgs e)
         {
-            //PowerPoint.SlideRange selected_slides = app.ActiveWindow.View.s;
+            var selected_slides = app.ActiveWindow.Selection.SlideRange;
 
+            foreach (PowerPoint.Slide current_slides in selected_slides)
+            {
+                for (int i = current_slides.TimeLine.MainSequence.Count; i >= 1; i--)
+                {
+                    Effect effect = current_slides.TimeLine.MainSequence[i];
+                    effect.Delete();
+                }
+            }
+        }
 
-            //foreach (Slide current_slide in selected_slides)
-            //{
-            //    for (int i = current_slide.TimeLine.MainSequence.Count; i >= 1; i--)
-            //    {
-            //        Effect effect = current_slide.TimeLine.MainSequence[i];
-            //        effect.Delete();
-            //        //for (int x = sequence.Count; x >= 1; x--)
-            //        //{
-            //        //    Effect effect = sequence[x];
+        private void editBox1_TextChanged(object sender, RibbonControlEventArgs e)
+        {
+             
+        }
 
-            //        //}
-            //    }
-            //}
+        private void font_weiruanyahei_Click(object sender, RibbonControlEventArgs e)
+        {
+            PowerPoint.Selection sel = app.ActiveWindow.Selection;
+            sel.TextRange.Font.NameFarEast = "微软雅黑";
+        }
 
+        private void font_timesNR_Click(object sender, RibbonControlEventArgs e)
+        {
+            PowerPoint.Selection sel = app.ActiveWindow.Selection;
+            sel.TextRange.Font.NameOther = "Times New Roman";
+            sel.TextRange.Font.Name = "Times New Roman";
         }
     }
 }

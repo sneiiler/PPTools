@@ -39,13 +39,17 @@
             this.group1 = this.Factory.CreateRibbonGroup();
             this.editBox1 = this.Factory.CreateRibbonEditBox();
             this.group2 = this.Factory.CreateRibbonGroup();
-            this.button1 = this.Factory.CreateRibbonButton();
-            this.button2 = this.Factory.CreateRibbonButton();
-            this.button3 = this.Factory.CreateRibbonButton();
-            this.button4 = this.Factory.CreateRibbonButton();
+            this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
+            this.line_spacing_12 = this.Factory.CreateRibbonButton();
+            this.line_spacing_specific = this.Factory.CreateRibbonButton();
+            this.font_weiruanyahei = this.Factory.CreateRibbonButton();
+            this.font_timesNR = this.Factory.CreateRibbonButton();
+            this.delete_current_page_animation = this.Factory.CreateRibbonButton();
+            this.delete_selected_page_animation = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
+            this.buttonGroup1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -58,9 +62,10 @@
             // 
             // group1
             // 
-            this.group1.Items.Add(this.button1);
+            this.group1.Items.Add(this.line_spacing_12);
+            this.group1.Items.Add(this.line_spacing_specific);
             this.group1.Items.Add(this.editBox1);
-            this.group1.Items.Add(this.button2);
+            this.group1.Items.Add(this.buttonGroup1);
             this.group1.Label = "文本调整";
             this.group1.Name = "group1";
             // 
@@ -69,45 +74,68 @@
             this.editBox1.Label = "自定义行距";
             this.editBox1.Name = "editBox1";
             this.editBox1.Text = "1.2";
+            this.editBox1.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.editBox1_TextChanged);
             // 
             // group2
             // 
-            this.group2.Items.Add(this.button3);
-            this.group2.Items.Add(this.button4);
+            this.group2.Items.Add(this.delete_current_page_animation);
+            this.group2.Items.Add(this.delete_selected_page_animation);
             this.group2.Label = "动画相关";
             this.group2.Name = "group2";
             // 
-            // button1
+            // buttonGroup1
             // 
-            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Label = "行距1.2";
-            this.button1.Name = "button1";
-            this.button1.ScreenTip = "将行距调整为1.2倍";
-            this.button1.ShowImage = true;
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            this.buttonGroup1.Items.Add(this.font_weiruanyahei);
+            this.buttonGroup1.Items.Add(this.font_timesNR);
+            this.buttonGroup1.Name = "buttonGroup1";
             // 
-            // button2
+            // line_spacing_12
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Label = "指定行间距";
-            this.button2.Name = "button2";
-            this.button2.ShowImage = true;
-            this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
+            this.line_spacing_12.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.line_spacing_12.Image = ((System.Drawing.Image)(resources.GetObject("line_spacing_12.Image")));
+            this.line_spacing_12.Label = "行距1.2";
+            this.line_spacing_12.Name = "line_spacing_12";
+            this.line_spacing_12.ScreenTip = "将行距调整为1.2倍";
+            this.line_spacing_12.ShowImage = true;
+            this.line_spacing_12.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.line_spacing_12_Click);
             // 
-            // button3
+            // line_spacing_specific
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Label = "一键删除本页动画";
-            this.button3.Name = "button3";
-            this.button3.ShowImage = true;
-            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
+            this.line_spacing_specific.Image = ((System.Drawing.Image)(resources.GetObject("line_spacing_specific.Image")));
+            this.line_spacing_specific.Label = "指定行间距";
+            this.line_spacing_specific.Name = "line_spacing_specific";
+            this.line_spacing_specific.ShowImage = true;
+            this.line_spacing_specific.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.line_spacing_specific_Click);
             // 
-            // button4
+            // font_weiruanyahei
             // 
-            this.button4.Label = "删除选中页面所有动画";
-            this.button4.Name = "button4";
-            this.button4.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button4_Click);
+            this.font_weiruanyahei.Image = ((System.Drawing.Image)(resources.GetObject("font_weiruanyahei.Image")));
+            this.font_weiruanyahei.Label = "微软雅黑";
+            this.font_weiruanyahei.Name = "font_weiruanyahei";
+            this.font_weiruanyahei.ShowImage = true;
+            this.font_weiruanyahei.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.font_weiruanyahei_Click);
+            // 
+            // font_timesNR
+            // 
+            this.font_timesNR.Image = ((System.Drawing.Image)(resources.GetObject("font_timesNR.Image")));
+            this.font_timesNR.Label = "Times NR";
+            this.font_timesNR.Name = "font_timesNR";
+            this.font_timesNR.ShowImage = true;
+            this.font_timesNR.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.font_timesNR_Click);
+            // 
+            // delete_current_page_animation
+            // 
+            this.delete_current_page_animation.Image = ((System.Drawing.Image)(resources.GetObject("delete_current_page_animation.Image")));
+            this.delete_current_page_animation.Label = "一键删除本页动画";
+            this.delete_current_page_animation.Name = "delete_current_page_animation";
+            this.delete_current_page_animation.ShowImage = true;
+            this.delete_current_page_animation.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.delete_current_page_animation_Click);
+            // 
+            // delete_selected_page_animation
+            // 
+            this.delete_selected_page_animation.Label = "删除选中页面所有动画";
+            this.delete_selected_page_animation.Name = "delete_selected_page_animation";
+            this.delete_selected_page_animation.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.delete_selected_page_animation_Click);
             // 
             // Ribbon1
             // 
@@ -121,6 +149,8 @@
             this.group1.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
+            this.buttonGroup1.ResumeLayout(false);
+            this.buttonGroup1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -129,12 +159,15 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton line_spacing_12;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBox1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton line_spacing_specific;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button3;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button4;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton delete_current_page_animation;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton delete_selected_page_animation;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButtonGroup buttonGroup1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton font_weiruanyahei;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton font_timesNR;
     }
 
     partial class ThisRibbonCollection
