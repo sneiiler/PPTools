@@ -37,22 +37,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon1));
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.editBox1 = this.Factory.CreateRibbonEditBox();
-            this.group2 = this.Factory.CreateRibbonGroup();
-            this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
             this.line_spacing_12 = this.Factory.CreateRibbonButton();
+            this.editBox1 = this.Factory.CreateRibbonEditBox();
             this.line_spacing_specific = this.Factory.CreateRibbonButton();
+            this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
             this.font_weiruanyahei = this.Factory.CreateRibbonButton();
             this.font_timesNR = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
             this.delete_current_page_animation = this.Factory.CreateRibbonButton();
             this.delete_selected_page_animation = this.Factory.CreateRibbonButton();
             this.group3 = this.Factory.CreateRibbonGroup();
-            this.resize_shape_fullbackground = this.Factory.CreateRibbonButton();
             this.isLockAspectRatio = this.Factory.CreateRibbonCheckBox();
+            this.resize_shape_fullbackground = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
-            this.group2.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
+            this.group2.SuspendLayout();
             this.group3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,6 @@
             this.tab1.Groups.Add(this.group3);
             this.tab1.Label = "PPTools";
             this.tab1.Name = "tab1";
-            this.tab1.Position = this.Factory.RibbonPosition.AfterOfficeId("TabHome");
             // 
             // group1
             // 
@@ -73,26 +72,6 @@
             this.group1.Items.Add(this.buttonGroup1);
             this.group1.Label = "文本调整";
             this.group1.Name = "group1";
-            // 
-            // editBox1
-            // 
-            this.editBox1.Label = "自定义行距";
-            this.editBox1.Name = "editBox1";
-            this.editBox1.Text = "1.2";
-            this.editBox1.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.editBox1_TextChanged);
-            // 
-            // group2
-            // 
-            this.group2.Items.Add(this.delete_current_page_animation);
-            this.group2.Items.Add(this.delete_selected_page_animation);
-            this.group2.Label = "动画相关";
-            this.group2.Name = "group2";
-            // 
-            // buttonGroup1
-            // 
-            this.buttonGroup1.Items.Add(this.font_weiruanyahei);
-            this.buttonGroup1.Items.Add(this.font_timesNR);
-            this.buttonGroup1.Name = "buttonGroup1";
             // 
             // line_spacing_12
             // 
@@ -104,6 +83,13 @@
             this.line_spacing_12.ShowImage = true;
             this.line_spacing_12.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.line_spacing_12_Click);
             // 
+            // editBox1
+            // 
+            this.editBox1.Label = "自定义行距";
+            this.editBox1.Name = "editBox1";
+            this.editBox1.Text = "1.2";
+            this.editBox1.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.editBox1_TextChanged);
+            // 
             // line_spacing_specific
             // 
             this.line_spacing_specific.Image = ((System.Drawing.Image)(resources.GetObject("line_spacing_specific.Image")));
@@ -111,6 +97,12 @@
             this.line_spacing_specific.Name = "line_spacing_specific";
             this.line_spacing_specific.ShowImage = true;
             this.line_spacing_specific.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.line_spacing_specific_Click);
+            // 
+            // buttonGroup1
+            // 
+            this.buttonGroup1.Items.Add(this.font_weiruanyahei);
+            this.buttonGroup1.Items.Add(this.font_timesNR);
+            this.buttonGroup1.Name = "buttonGroup1";
             // 
             // font_weiruanyahei
             // 
@@ -127,6 +119,13 @@
             this.font_timesNR.Name = "font_timesNR";
             this.font_timesNR.ShowImage = true;
             this.font_timesNR.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.font_timesNR_Click);
+            // 
+            // group2
+            // 
+            this.group2.Items.Add(this.delete_current_page_animation);
+            this.group2.Items.Add(this.delete_selected_page_animation);
+            this.group2.Label = "动画相关";
+            this.group2.Name = "group2";
             // 
             // delete_current_page_animation
             // 
@@ -149,6 +148,11 @@
             this.group3.Label = "形状";
             this.group3.Name = "group3";
             // 
+            // isLockAspectRatio
+            // 
+            this.isLockAspectRatio.Label = "保持原比例";
+            this.isLockAspectRatio.Name = "isLockAspectRatio";
+            // 
             // resize_shape_fullbackground
             // 
             this.resize_shape_fullbackground.Image = ((System.Drawing.Image)(resources.GetObject("resize_shape_fullbackground.Image")));
@@ -156,11 +160,6 @@
             this.resize_shape_fullbackground.Name = "resize_shape_fullbackground";
             this.resize_shape_fullbackground.ShowImage = true;
             this.resize_shape_fullbackground.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.resize_shape_fullbackground_Click);
-            // 
-            // isLockAspectRatio
-            // 
-            this.isLockAspectRatio.Label = "保持原比例";
-            this.isLockAspectRatio.Name = "isLockAspectRatio";
             // 
             // Ribbon1
             // 
@@ -172,10 +171,10 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
-            this.group2.ResumeLayout(false);
-            this.group2.PerformLayout();
             this.buttonGroup1.ResumeLayout(false);
             this.buttonGroup1.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
             this.group3.ResumeLayout(false);
             this.group3.PerformLayout();
             this.ResumeLayout(false);
